@@ -1,5 +1,6 @@
 import React from 'react'
 import Character from './Character'
+import uuid from 'uuid'
 export const Characters = (props) => {
     const {characters} = props
     console.log(props)
@@ -11,10 +12,9 @@ export const Characters = (props) => {
              
             {
                 characters.map(character=>{
-                    console.log(character)
                     return(
                        
-                        <Character character = {character}/>
+                        <Character character = {character}  />
                         
                     ) 
                 })

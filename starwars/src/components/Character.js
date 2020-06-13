@@ -4,15 +4,15 @@ import Container from './Container'
 
 export const Character = (props) => {
         
-    
+    console.log(props.character.id)
    
     return (
         
         <div>
-            <Container>
+            <Container >
                 <h2>{props.character.name}</h2>
                 <img src={props.character.image}/>     
-                {console.log(props.character.name)}
+                {/* {console.log(props.character.name)} */}
             </Container>
             
         </div>

@@ -18,30 +18,33 @@ const App = () => {
   const[characters, setCharacters]=useState([])
   const[pageNumber, setPageNumber]=useState(1)
   // useEffect(()=>{
-  //   function nextPage(){
-  //     setPageNumber(pageNumber+1)
-  //   }
+    
   // })
- 
+  // function nextPage(){
+  //   setPageNumber(pageNumber+1)
+  //   // console.log(pageNumber)
+  // }
   useEffect(() => {
-    axios.get('https://rickandmortyapi.com/api/character/')
+    axios.get(`https://rickandmortyapi.com/api/character/?page=${pageNumber}`)
+    
     .then(response=>{
-      console.log(response.data.results)
+      // console.log(response.data.results)
       setCharacters(response.data.results)
+      console.log(pageNumber)
     })
     .catch(error=>{
       console.log(error)
     })
-  },[])
+  },[pageNumber])
 
   return (
     <div className="App">
 
       
       <div>
-      <Button color="secondary">Previous Page</Button>
-    
-      <Button color="primary">Next Page</Button>
+      <Button color="secondary"  onClick={() => pageNumber >= 1 ? setPageNumber(pageNumber + 1): null}>Previous Page</Button>
+    {/* {console.log(pageNumber)} */}
+      <Button color="primary" onClick={() => setPageNumber(pageNumber + 1)}>Next Page</Button>
       </div>
       <Characters characters = {characters} />
       
