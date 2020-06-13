@@ -6,19 +6,21 @@ export const Characters = (props) => {
     console.log(props)
     return (
         
-        <div>
-             <h1>Characters</h1>
+        <div className="wrapper">
+             <h3>Characters</h3>
             
-             
-            {
-                characters.map(character=>{
-                    return(
-                       
-                        <Character character = {character}  />
+             <div className="biggerContainer">
+                {
+                    characters.map(character=>{
+                        return(
                         
-                    ) 
-                })
-            }
+                            <Character character = {character}  />
+                            
+                        ) 
+                    })
+                }
+             </div>
+           
         </div>
     )
 }

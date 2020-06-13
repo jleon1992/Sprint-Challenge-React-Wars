@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   border: 1px solid rgb(210, 210, 210);
-  width: 50%;
+  width: 100%;
   
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   border-radius: ${props => props.count || 8}px;

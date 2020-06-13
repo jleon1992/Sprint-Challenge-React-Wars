@@ -25,12 +25,9 @@ const App = () => {
   //   // console.log(pageNumber)
   // }
   useEffect(() => {
-    axios.get(`https://rickandmortyapi.com/api/character/?page=${pageNumber}`)
-    
+    axios.get(`https://rickandmortyapi.com/api/character/?page=${pageNumber}`)    
     .then(response=>{
-      // console.log(response.data.results)
       setCharacters(response.data.results)
-      console.log(pageNumber)
     })
     .catch(error=>{
       console.log(error)
@@ -42,9 +39,10 @@ const App = () => {
 
       
       <div>
-      <Button color="secondary"  onClick={() => pageNumber >= 1 ? setPageNumber(pageNumber + 1): null}>Previous Page</Button>
-    {/* {console.log(pageNumber)} */}
+        <h1>RICK AND MORTY</h1>
+      <Button color="secondary"  onClick={() => pageNumber >= 1 ? setPageNumber(pageNumber - 1): null}>Previous Page</Button>
       <Button color="primary" onClick={() => setPageNumber(pageNumber + 1)}>Next Page</Button>
+        <h3>Page {pageNumber}</h3>
       </div>
       <Characters characters = {characters} />
       
